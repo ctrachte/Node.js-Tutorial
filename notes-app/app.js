@@ -1,4 +1,4 @@
-const fs = require('fs');
+const fs = require('fs')
 
 // fs.writeFileSync('notes.txt', 'My name is Caleb Trachte. ');
 
