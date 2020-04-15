@@ -1,5 +1,7 @@
-const name = require('./utils3_10.js')
+const add = require('./utils3_10.js')
 
 // const name = 'Caleb Trachte'
 
-console.log(name)
+const sum = add(2,2)
+// console.log(add)
+console.log(sum)
