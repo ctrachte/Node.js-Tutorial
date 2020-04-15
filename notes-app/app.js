@@ -24,5 +24,7 @@ const fs = require('fs')
 // Lesson 3.11
 const validator = require('validator')
 const getNotes = require('./notes.js')
-
+//prints true
 console.log(validator.isEmail('cetrachte@email.com'))
+// prints false
+console.log(validator.isURL('cetrachte'))
