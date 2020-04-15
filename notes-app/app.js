@@ -21,10 +21,15 @@ const fs = require('fs')
 // // console.log(sum)
 // console.log(getNotes)
 
-// Lesson 3.11
-const validator = require('validator')
-const getNotes = require('./notes.js')
-//prints true
-console.log(validator.isEmail('cetrachte@email.com'))
-// prints false
-console.log(validator.isURL('cetrachte'))
+// // Lesson 3.11
+// const validator = require('validator')
+// const getNotes = require('./notes.js')
+// //prints true
+// console.log(validator.isEmail('cetrachte@email.com'))
+// // prints false
+// console.log(validator.isURL('cetrachte'))
+
+// Lesson 3.12
+const chalk = require('chalk');
+ 
+console.log(chalk.green('Success!'));
