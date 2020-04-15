@@ -8,5 +8,5 @@ try {
     console.log('The "text to append" was appended to file!');
   } catch (err) {
     /* Handle the error */
-    console.log('The "text to append" was not appended to file!' + err.text);
+    console.log('The "text to append" was not appended to file!', err);
   }
