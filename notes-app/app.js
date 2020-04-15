@@ -21,3 +21,8 @@ const fs = require('fs')
 // // console.log(sum)
 // console.log(getNotes)
 
+// Lesson 3.11
+const validator = require('validator')
+const getNotes = require('./notes.js')
+
+console.log(validator.isEmail('cetrachte@email.com'))
