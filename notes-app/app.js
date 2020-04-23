@@ -1,4 +1,4 @@
-const fs = require('fs')
+const fs = require('fs');
 
 // fs.writeFileSync('notes.txt', 'My name is Caleb Trachte. ');
 
@@ -34,4 +34,19 @@ const fs = require('fs')
  
 // console.log(chalk.green('Success!'));
 
-// Lesson 3.13
+//Lesson 4.15
+const chalk = require('chalk');
+const getNotes = require('./notes.js');
+
+// const greenMsg = chalk.blue.inverse.bold('Success!');
+// console.log(greenMsg);
+// // returns array of arguments provided.
+// console.log(process.argv[2]);
+
+const command = process.argv[2];
+
+if (command === 'add') {
+    console.log('Adding Note ...');
+} else if (command === 'Remove'){
+    console.log('Removing Note ...');
+};
