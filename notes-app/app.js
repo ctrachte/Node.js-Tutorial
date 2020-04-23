@@ -37,16 +37,20 @@ const fs = require('fs');
 //Lesson 4.15
 const chalk = require('chalk');
 const getNotes = require('./notes.js');
+const yargs = require('yargs');
 
 // const greenMsg = chalk.blue.inverse.bold('Success!');
 // console.log(greenMsg);
 // // returns array of arguments provided.
 // console.log(process.argv[2]);
 
-const command = process.argv[2];
+// const command = process.argv[2];
 
-if (command.toLowerCase() === 'add') {
-    console.log('Adding Note ...');
-} else if (command.toLowerCase() === 'remove'){
-    console.log('Removing Note ...');
-};
+// if (command.toLowerCase() === 'add') {
+//     console.log('Adding Note ...');
+// } else if (command.toLowerCase() === 'remove'){
+//     console.log('Removing Note ...');
+// };
+
+console.log(process.argv);
+console.log(yargs.argv);
