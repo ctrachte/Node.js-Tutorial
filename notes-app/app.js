@@ -55,6 +55,7 @@ const yargs = require('yargs');
 // customize yargs version
 // yargs.version('1.1.0')
 
+// Lesson 4.16 and 4.17
 // Need the following: add, remove, read, list notes
 
 // add command
@@ -66,10 +67,16 @@ yargs.command({
             describe: 'Note Title',
             demandOption: true,
             type: 'string'
+        },
+        body: {
+            describe: 'Note Body',
+            demandOption: true,
+            type: 'string'
         }
     },
     handler: (argv) => {
-        console.log('Adding a new note ...', argv);
+        console.log('Title: ', argv.title);
+        console.log('Body: ', argv.body);
     }
 });
 
@@ -101,4 +108,4 @@ yargs.command({
 });
 
 // show output
-console.log(yargs.argv);
+yargs.parse();
