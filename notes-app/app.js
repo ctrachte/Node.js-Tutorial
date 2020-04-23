@@ -52,6 +52,46 @@ const yargs = require('yargs');
 //     console.log('Removing Note ...');
 // };
 
+// customize yargs version
+// yargs.version('1.1.0')
 
-console.log(process.argv);
+// Need the following: add, remove, read, list notes
+
+// add command
+yargs.command({
+    command: 'add',
+    describe: 'Add a new note.',
+    handler: () => {
+        console.log('Adding a new note ...');
+    }
+});
+
+// remove command
+yargs.command({
+    command: 'remove',
+    describe: 'Remove a note.',
+    handler: () => {
+        console.log('Removing a note ...');
+    }
+});
+
+// read command
+yargs.command({
+    command: 'read',
+    describe: 'Read a note.',
+    handler: () => {
+        console.log('Reading a note ...');
+    }
+});
+
+// list command
+yargs.command({
+    command: 'list',
+    describe: 'List all notes.',
+    handler: () => {
+        console.log('Listing all notes ...');
+    }
+});
+
+// show output
 console.log(yargs.argv);
