@@ -29,7 +29,9 @@ const fs = require('fs')
 // // prints false
 // console.log(validator.isURL('cetrachte'))
 
-// Lesson 3.12
-const chalk = require('chalk');
+// // Lesson 3.12 Challenge: 
+// const chalk = require('chalk');
  
-console.log(chalk.green('Success!'));
+// console.log(chalk.green('Success!'));
+
+// Lesson 3.13
