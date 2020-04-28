@@ -36,7 +36,7 @@ const fs = require('fs');
 
 //Lesson 4.15
 const chalk = require('chalk');
-const getNotes = require('./notes.js');
+const notes = require('./notes.js');
 const yargs = require('yargs');
 
 // const greenMsg = chalk.blue.inverse.bold('Success!');
@@ -75,8 +75,7 @@ yargs.command({
         }
     },
     handler: (argv) => {
-        console.log('Title: ', argv.title);
-        console.log('Body: ', argv.body);
+        notes.addNote(argv.title, argv.body);
     }
 });
 
