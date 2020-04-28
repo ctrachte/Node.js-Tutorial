@@ -20,7 +20,6 @@ const addNote = (title, body) => {
             body: body
         });
         saveNotes(notes);
-        console.log(notes)
         console.log('New note added!');
     } else {
         console.log('Note title "' + title + '" is already taken!');
@@ -40,7 +39,6 @@ const removeNote = (title) => {
         console.log('Notes titled "' + title + '" does not exist. Nothing removed.');
     } else {
         saveNotes(newNotes);
-        console.log(newNotes)
         console.log('Note "' + title + '"removed.');
     }
 };
