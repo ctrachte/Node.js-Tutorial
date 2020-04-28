@@ -1,4 +1,6 @@
 const fs = require('fs');
+const chalk = require('chalk');
+
 // Lesson 3.10
 const getNotes = function () {
     console.log(loadNotes());
@@ -20,26 +22,26 @@ const addNote = (title, body) => {
             body: body
         });
         saveNotes(notes);
-        console.log('New note added!');
+        console.log(chalk.green('New note added!'));
     } else {
-        console.log('Note title "' + title + '" is already taken!');
+        console.log(chalk.red('Note title "' + title + '" is already taken!'));
     }
 };
 
 const removeNote = (title) => {
     let notes = loadNotes();
     if (notes.length === 0) {
-        console.log('There are currently no notes to remove ... ');
+        console.log(chalk.yellow('There are currently no notes to remove ... '));
         return;
     }
     let newNotes = notes.filter((note)=> {
         return note.title !== title;
     });
     if (newNotes.length === notes.length) {
-        console.log('Notes titled "' + title + '" does not exist. Nothing removed.');
+        console.log(chalk.red('Notes titled "' + title + '" does not exist. Nothing removed.'));
     } else {
         saveNotes(newNotes);
-        console.log('Note "' + title + '"removed.');
+        console.log(chalk.green('Note "' + title + '"removed.'));
     }
 };
 
