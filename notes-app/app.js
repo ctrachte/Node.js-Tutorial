@@ -1,4 +1,7 @@
 const fs = require('fs');
+const chalk = require('chalk');
+const notes = require('./notes.js');
+const yargs = require('yargs');
 
 // fs.writeFileSync('notes.txt', 'My name is Caleb Trachte. ');
 
@@ -35,9 +38,6 @@ const fs = require('fs');
 // console.log(chalk.green('Success!'));
 
 //Lesson 4.15
-const chalk = require('chalk');
-const notes = require('./notes.js');
-const yargs = require('yargs');
 
 // const greenMsg = chalk.blue.inverse.bold('Success!');
 // console.log(greenMsg);
