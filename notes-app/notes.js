@@ -7,7 +7,10 @@ const getNotes = function () {
 
 // Lesson 4.19
 const addNote = (title, body) => {
-    const notes = loadNotes();
+    let notes = loadNotes();
+    if (notes.length === 0) {
+        notes = [];
+    }
     const duplicateNotes = notes.filter((note)=> {
         return note.title === title;
     });
@@ -17,11 +20,31 @@ const addNote = (title, body) => {
             body: body
         });
         saveNotes(notes);
+        console.log(notes)
         console.log('New note added!');
     } else {
         console.log('Note title "' + title + '" is already taken!');
     }
 };
+
+const removeNote = (title) => {
+    const notes = loadNotes();
+    if (notes.length === 0) {
+        console.log('There are currently no notes to remove ... ');
+        return;
+    }
+    const newNotes = notes.filter((note)=> {
+        return note.title !== title;
+    });
+    if (newNotes.length === notes.length) {
+        console.log('Notes titled "' + title + '" does not exist. Nothing removed.');
+    } else {
+        saveNotes(newNotes);
+        console.log(newNotes)
+        console.log('Note "' + title + '"removed.');
+    }
+};
+
 
 const saveNotes = (notes) => {
     const dataJSON = JSON.stringify(notes);
@@ -40,5 +63,6 @@ const loadNotes = () => {
 
  module.exports = {
      getNotes: getNotes,
-     addNote: addNote
+     addNote: addNote,
+     removeNote: removeNote
  };
