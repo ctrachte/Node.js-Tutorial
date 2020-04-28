@@ -5,13 +5,13 @@ const getNotes = function () {
 };
 
 
-// Lesson 4.19
+// Lesson 4.19 + 4.20
 const addNote = (title, body) => {
     let notes = loadNotes();
     if (notes.length === 0) {
         notes = [];
     }
-    const duplicateNotes = notes.filter((note)=> {
+    let duplicateNotes = notes.filter((note)=> {
         return note.title === title;
     });
     if (duplicateNotes.length === 0) {
@@ -28,12 +28,12 @@ const addNote = (title, body) => {
 };
 
 const removeNote = (title) => {
-    const notes = loadNotes();
+    let notes = loadNotes();
     if (notes.length === 0) {
         console.log('There are currently no notes to remove ... ');
         return;
     }
-    const newNotes = notes.filter((note)=> {
+    let newNotes = notes.filter((note)=> {
         return note.title !== title;
     });
     if (newNotes.length === notes.length) {
@@ -47,14 +47,14 @@ const removeNote = (title) => {
 
 
 const saveNotes = (notes) => {
-    const dataJSON = JSON.stringify(notes);
+    let dataJSON = JSON.stringify(notes);
     fs.writeFileSync('notes.json', dataJSON);
 };
 
 const loadNotes = () => {
     try {
-        const dataBuffer = fs.readFileSync('notes.json');
-        const dataJSON = dataBuffer.toString();
+        let dataBuffer = fs.readFileSync('notes.json');
+        let dataJSON = dataBuffer.toString();
         return JSON.parse(dataJSON);
     } catch (error) {
         return [];
