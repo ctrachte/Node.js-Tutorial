@@ -8,6 +8,18 @@ const getNotes = function () {
 // Lesson 4.19
 const addNote = (title, body) => {
     const notes = loadNotes();
+
+    notes.push({
+        title: title,
+        body: body
+    });
+
+    saveNotes(notes);
+};
+
+const saveNotes = (notes) => {
+    const dataJSON = JSON.stringify(notes);
+    fs.writeFileSync('notes.json', dataJSON);
 };
 
 const loadNotes = () => {
@@ -17,7 +29,7 @@ const loadNotes = () => {
         return JSON.parse(dataJSON);
     } catch (error) {
         return [];
-    }
+    };
 };
 
  module.exports = {
