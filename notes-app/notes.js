@@ -1,7 +1,7 @@
 const fs = require('fs');
 // Lesson 3.10
 const getNotes = function () {
-    return 'Your notes...';
+    console.log(loadNotes());
 };
 
 
