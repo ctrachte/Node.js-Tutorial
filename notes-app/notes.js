@@ -3,7 +3,15 @@ const chalk = require('chalk');
 
 // Lesson 3.10
 const getNotes = function () {
-    console.log(loadNotes());
+    console.log(chalk.bgBlueBright('Notes:'));
+    let notes = loadNotes();
+    if (notes.length === 0) {
+        console.log(chalk.bgRed('You have no notes!'));
+    } else {
+        notes.forEach((note)=> {
+            console.log(chalk.bgYellow(note.title));
+        })
+    }
 };
 
 
