@@ -21,10 +21,12 @@ const addNote = (title, body) => {
     if (notes.length === 0) {
         notes = [];
     }
-    let duplicateNotes = notes.filter((note)=> {
-        return note.title === title;
-    });
-    if (duplicateNotes.length === 0) {
+    // let duplicateNotes = notes.filter((note)=> {
+    //     return note.title === title;
+    // });
+    let duplicateNote = notes.find((note) => note.title === title);
+
+    if (!duplicateNote) {
         notes.push({
             title: title,
             body: body
